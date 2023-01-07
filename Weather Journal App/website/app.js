@@ -2,7 +2,7 @@
 const apiKey = `2921871a0e3f464b70033de591ff9728&units=imperial`;
 const baseURL = `https://api.openweathermap.org/data/2.5/weather`;
 let d = new Date();
-let newDate = `${d.getMonth()}.${d.getDate()}.${d.getFullYear()}`;
+let newDate = `${let newDate = d.getMonth() + 1 + "/" + d.getDate() + "/" + d.getFullYear()}`;
 /* Function to POST data */
 document.getElementById("generate").addEventListener("click", performAction);
 function performAction(e) {
@@ -21,7 +21,8 @@ function performAction(e) {
             });
         });
         // call update ui
-        updateUi();
+        .then(function() {
+          updatingUI()
     }
 }
 const getWeatherData = async (baseURL, zipCode, apiKey) => {
